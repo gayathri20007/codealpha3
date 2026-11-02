@@ -1,0 +1,54 @@
+
+import java.util.Scanner;
+
+public class AIChatbot {
+
+    static String getResponse(String input) {
+        input = input.toLowerCase().trim();
+
+        if (input.contains("hello") || input.contains("hi")) {
+            return "Hello! How can I help you?";
+        } else if (input.contains("your name")) {
+            return "I am Java AI Chatbot.";
+        } else if (input.contains("how are you")) {
+            return "I am fine! Thank you for asking.";
+        } else if (input.contains("java")) {
+            return "Java is an object-oriented programming language.";
+        } else if (input.contains("ai") ||
+                   input.contains("artificial intelligence")) {
+            return "AI enables machines to perform intelligent tasks.";
+        } else if (input.contains("college")) {
+            return "Study regularly and practice coding every day!";
+        } else if (input.contains("thank")) {
+            return "You're welcome! Happy to help.";
+        } else if (input.contains("bye")) {
+            return "Goodbye! Have a great day!";
+        } else {
+            return "Sorry, I don't understand. Please ask another question.";
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("================================");
+        System.out.println("       JAVA AI CHATBOT");
+        System.out.println("================================");
+        System.out.println("Bot: Hello! Welcome to AI Chatbot.");
+        System.out.println("Bot: Type 'bye' to exit.");
+
+        while (true) {
+            System.out.print("\nYou: ");
+            String input = sc.nextLine();
+
+            String response = getResponse(input);
+            System.out.println("Bot: " + response);
+
+            if (input.toLowerCase().trim().contains("bye")) {
+                break;
+            }
+        }
+
+        sc.close();
+    }
+}
